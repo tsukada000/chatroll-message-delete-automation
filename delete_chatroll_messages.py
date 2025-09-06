@@ -211,8 +211,9 @@ def login_if_needed(page):
                 page.fill(SELECTORS["login_username"], CHATROLL_USER)
                 page.fill(SELECTORS["login_password"], CHATROLL_PASS)
                 safe_click(page, SELECTORS["login_submit"])
-                page.wait_for_load_state("networkidle", timeout=GLOBAL_TIMEOUT)
-                time.sleep(1)
+                page.wait_for_load_state("domcontentloaded", timeout=10000)
+                time.sleep(3)
+                print(f"ログイン完了後のURL: {page.url}")
                 print(f"Login submitted. Final URL: {page.url}")
             else:
                 print("Still no login form found after clicking Log in link")
@@ -249,8 +250,9 @@ def login_if_needed(page):
                     page.fill('#login-username', CHATROLL_USER)
                     page.fill('#passwordInput', CHATROLL_PASS)
                     page.click('button[type="submit"]')
-                    page.wait_for_load_state("networkidle", timeout=GLOBAL_TIMEOUT)
-                    time.sleep(2)
+                    page.wait_for_load_state("domcontentloaded", timeout=10000)
+                    time.sleep(3)
+                    print(f"ログイン試行完了後のURL: {page.url}")
                     print(f"Login attempted. Current URL: {page.url}")
                 except Exception as login_err:
                     print(f"Login attempt failed: {login_err}")
@@ -439,6 +441,11 @@ def main():
         # まずログイン処理を実行
         page.goto("https://chatroll.com/", wait_until="domcontentloaded")
         login_if_needed(page)
+        
+        # ログイン完了後の追加確認
+        time.sleep(2)
+        print(f"メイン処理開始前のURL確認: {page.url}")
+        print(f"ページタイトル: {page.title()}")
 
         total_deleted = 0
         
