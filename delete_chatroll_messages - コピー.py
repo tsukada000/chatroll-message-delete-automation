@@ -4,14 +4,7 @@ import time
 from dotenv import load_dotenv
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeoutError
 
-load_dotenv()
 
-CHATROLL_USER = "DSI"
-CHATROLL_PASS = "Stat3908@"
-CHATROLL_ROOM_URLS = [
-    "https://chatroll.com/7mll",
-    "https://chatroll.com/3bt8"
-]
 
 # ===== 調整ポイント（あなたの環境に合わせて変更） =====
 SELECTORS = {
