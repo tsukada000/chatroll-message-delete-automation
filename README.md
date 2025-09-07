@@ -8,10 +8,10 @@ Chatrollメッセージを自動削除するGitHub Actionsワークフローの�
 
 GitHubリポジトリの Settings → Secrets and variables → Actions で以下のsecretsを設定：
 
-- `CHATROLL_USERNAME`: Chatrollのユーザー名（例: `DSI`）
-- `CHATROLL_PASSWORD`: Chatrollのパスワード（例: `Stat3908@`）
-- `CHATROLL_ROOM1_URL`: 1つ目のチャットルームURL（例: `https://chatroll.com/7mll`）
-- `CHATROLL_ROOM2_URL`: 2つ目のチャットルームURL（例: `https://chatroll.com/3bt8`）
+- `CHATROLL_USERNAME`: Chatrollのユーザー名
+- `CHATROLL_PASSWORD`: Chatrollのパスワード
+- `CHATROLL_ROOM1_URL`: 1つ目のチャットルームURL
+- `CHATROLL_ROOM2_URL`: 2つ目のチャットルームURL
 
 ### 2. ワークフローの実行スケジュール
 
