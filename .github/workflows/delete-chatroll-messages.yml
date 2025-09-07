@@ -2,7 +2,7 @@ name: Delete Chatroll Messages
 
 on:
   schedule:
-    - cron: '30 2 * * *'
+    - cron: '0 4 * * *'
   workflow_dispatch:  # 手動実行も可能
 
 jobs:
