@@ -6,11 +6,11 @@ from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeo
 
 load_dotenv()
 
-CHATROLL_USER = os.getenv('CHATROLL_USERNAME', 'DSI')
-CHATROLL_PASS = os.getenv('CHATROLL_PASSWORD', 'Stat3908@')
+CHATROLL_USER = os.getenv('CHATROLL_USERNAME')
+CHATROLL_PASS = os.getenv('CHATROLL_PASSWORD')
 CHATROLL_ROOM_URLS = [
-    os.getenv('CHATROLL_ROOM1_URL', 'https://chatroll.com/7mll'),
-    os.getenv('CHATROLL_ROOM2_URL', 'https://chatroll.com/3bt8')
+    os.getenv('CHATROLL_ROOM1_URL'),
+    os.getenv('CHATROLL_ROOM2_URL')
 ]
 
 # ===== 調整ポイント（あなたの環境に合わせて変更） =====
